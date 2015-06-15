@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>87DFF50E-644F-45C5-90FB-D877E5814591</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Snakes and Ladders</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>17A62B8814C2CC27EDC1604AC3B03019A53594EA</key>
+		<string>https://github.com/jendter/Snakes-and-Ladders.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Snakes and Ladders.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>17A62B8814C2CC27EDC1604AC3B03019A53594EA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jendter/Snakes-and-Ladders.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>17A62B8814C2CC27EDC1604AC3B03019A53594EA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>17A62B8814C2CC27EDC1604AC3B03019A53594EA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Snakes%20and%20Ladders</string>
+		</dict>
+	</array>
+</dict>
+</plist>

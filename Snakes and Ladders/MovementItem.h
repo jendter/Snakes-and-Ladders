@@ -30,8 +30,9 @@ typedef enum {
 @property (assign, nonatomic) int type;
 
 + (MovementItem *) movementItemWithMin:(int)min andMax:(int)max;
-+ (MovementItem *) movementItemForBoardSize:(int)boardSize forItemLength:(MovementItemSize)size forItemType:(MovementItemType)type;
++ (MovementItem *) movementItemForBoardSize:(int)boardSize forItemLength:(MovementItemSize)size forItemType:(MovementItemType)type WithBoardItems:(NSArray *)existingMovementItems;
 
 - (NSString *) typeStringValue;
+- (BOOL)boardSpaceIsEmptyforCurrentMovementItems:(NSArray *)movementItems;
 
 @end

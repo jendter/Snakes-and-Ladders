@@ -91,7 +91,7 @@
                 }
                 
                 for (int i = 0; i < numOfLargeLadders; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:large forItemType:ladder];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:large forItemType:ladder WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
                 
@@ -103,7 +103,7 @@
                 }
                 
                 for (int i = 0; i < numOfSmallLadders; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:small forItemType:ladder];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:small forItemType:ladder WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
                 
@@ -115,7 +115,7 @@
                 }
                 
                 for (int i = 0; i < numOfMediumLargeLadders; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:mediumLarge forItemType:ladder];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:mediumLarge forItemType:ladder WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
                 
@@ -123,7 +123,7 @@
                 numOfMediumLadders = numOfLadders - numOfAllLaddersMade;
                 
                 for (int i = 0; i < numOfMediumLadders; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:medium forItemType:ladder];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:medium forItemType:ladder WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
             }
@@ -148,7 +148,7 @@
                 }
                 
                 for (int i = 0; i < numOfLargeSnakes; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:large forItemType:snake];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:large forItemType:snake WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
                 
@@ -161,7 +161,7 @@
                 }
                 
                 for (int i = 0; i < numOfSmallSnakes; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:small forItemType:snake];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:small forItemType:snake WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
                 
@@ -174,14 +174,14 @@
                 }
                 
                 for (int i = 0; i < numOfMediumLargeSnakes; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:mediumLarge forItemType:snake];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:mediumLarge forItemType:snake WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
             } else {
                 numOfMediumSnakes = numOfSnakes - numOfAllSnakesMade;
                 
                 for (int i = 0; i < numOfMediumSnakes; i++) {
-                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:medium forItemType:snake];
+                    newMovementItem = [MovementItem movementItemForBoardSize:boardSize forItemLength:medium forItemType:snake WithBoardItems:[movementItems copy]];
                     [movementItems addObject:newMovementItem];
                 }
                 

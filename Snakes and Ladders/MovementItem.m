@@ -11,7 +11,7 @@
 @implementation MovementItem
 
 
-+ (MovementItem *) movementItemForBoardSize:(int)boardSize forItemLength:(MovementItemSize)size forItemType:(MovementItemType)type {
++ (MovementItem *) movementItemForBoardSize:(int)boardSize forItemLength:(MovementItemSize)size forItemType:(MovementItemType)type WithBoardItems:(NSArray *)existingMovementItems{
     MovementItem *newMovementItem = [[MovementItem alloc] init];
     
     newMovementItem.lowSpace = arc4random_uniform(boardSize); // lowest possible value is 0
@@ -71,7 +71,10 @@
         while (
                (newMovementItem.highSpace - newMovementItem.lowSpace) != 1 ||
                newMovementItem.lowSpace > newMovementItem.highSpace ||
-               newMovementItem.lowSpace == 0
+               newMovementItem.lowSpace == 0 ||
+               //[newMovementItem boardSpaceIsEmpty:existingMovementItems];
+               //(BOOL)boardSpaceIsEmpty:(int)boardSpaceNum forCurrentMovementItems:(NSArray *)movementItems
+               ![newMovementItem boardSpaceIsEmptyforCurrentMovementItems:existingMovementItems]
                ) {
             newMovementItem.lowSpace = arc4random_uniform(boardSize);
             newMovementItem.highSpace = arc4random_uniform(boardSize);
@@ -87,7 +90,8 @@
                (float)(newMovementItem.highSpace - newMovementItem.lowSpace) < ((float)boardSize * lowestAcceptablePercentage) ||
                (float)(newMovementItem.highSpace - newMovementItem.lowSpace) > ((float)boardSize * highestAcceptablePercentage) ||
                newMovementItem.lowSpace > newMovementItem.highSpace ||
-               newMovementItem.lowSpace == 0
+               newMovementItem.lowSpace == 0 ||
+               ![newMovementItem boardSpaceIsEmptyforCurrentMovementItems:existingMovementItems]
                ) {
             newMovementItem.lowSpace = arc4random_uniform(boardSize);
             newMovementItem.highSpace = arc4random_uniform(boardSize);
@@ -129,6 +133,24 @@
     newMovementItem.highSpace = newMovementItem.highSpace + min;
     
     return newMovementItem;
+}
+
+- (BOOL)boardSpaceIsEmptyforCurrentMovementItems:(NSArray *)movementItems {
+
+    for (MovementItem *existingItem in movementItems) {
+        if (
+            self.highSpace == existingItem.highSpace ||
+            self.highSpace == existingItem.lowSpace ||
+            self.lowSpace == existingItem.highSpace ||
+            self.lowSpace == existingItem.lowSpace
+            ) {
+            // If the movement item high or low space matches any existing movement item's high or low space
+            // i.e. Stops overlapping movement items
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 @end
